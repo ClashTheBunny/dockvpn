@@ -5,7 +5,7 @@ docker build -t="$TAG" .
 
 # create a container that's just saving the state of /etc/openvpn/
 # this won't overwrite something that exists
-docker ps -a | grep -q OpenVPN-Config || docker run -v /etc/openvpn/ --name OpenVPN-Config busybox true
+docker ps -a | grep -q OpenVPN-Config || docker run -v /etc/openvpn/ --name OpenVPN-Config clashthebunny/debian-armel:jessie true
 
 # delete any old builds
 docker stop dockvpn; docker rm dockvpn
